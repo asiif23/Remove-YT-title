@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove YT title</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .plyr .plyr__control--overlaid {
+        background: #fff;
+        width: 71px;
+        height: 71px;
+        z-index: 20;
+      }
+      
+      .plyr .plyr__control--overlaid svg {
+        fill: #000;
+        left: 0;
+        right: 0;
+        margin:0 auto;
+      }
+      .plyr__video-embed iframe {
+        top: -50% !important;
+        height: 200% !important;
+      }
+      </style>
+      <style scoped>
+      .button-trigger {
+        width: 71px;
+        height: 71px;
+        cursor: pointer;
+        @apply rounded-full;
+      }
+      </style>
+  </head>
+  <body>
+    <div
+      id="player"
+      data-plyr-provider="youtube"
+      data-plyr-embed-id="MdPc9MxNRhQ"
+    >
+    <input type="range">
+    <progress></div>
+    <!-- SCRIPT -->
+    <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+    <script>
+      // const player = new Plyr('#player');
+      const player = new Plyr(document.getElementById("player"));
+    </script>
+  </body>
+</html>
